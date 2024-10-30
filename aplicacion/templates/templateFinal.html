@@ -1,0 +1,20 @@
+{% extends "baseFin.html" %}
+{% block content %}
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Imagen </th>
+          <th scope="col">Nivel</th>
+        </tr>
+      </thead>
+    {% for d in digimones %}
+        <tr>
+            <td>{{d.name}} </td>
+            <td><img src= "{{d.img}}" height="50" width="50"> </td>
+            <td>{{d.level}} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

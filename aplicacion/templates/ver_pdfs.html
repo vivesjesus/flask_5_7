@@ -1,0 +1,25 @@
+{% extends "baseFin.html" %}
+{% block title %}Ver pdf{% endblock %}
+{% block content %}
+<h2>Ver TODOS PDF</h2>
+{% if msg: %}
+    <div class="alert alert-success">
+        {{msg}}
+    </div>
+{% endif %}
+<Table>
+    {% for nombre_pdf in lista: %}
+        <tr>
+            <Td>
+                <a href="{{url_for('static',filename='pdf/')}}{{nombre_pdf}}" target="_blank"  >{{nombre_pdf}}</a>
+            </Td>
+            <td>
+                <a href="{{url_for('borrar_pdf',pdfBorrar=nombre_pdf)}}" type="button" class="btn btn-danger" >
+                <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    {%endfor%}
+
+</Table>
+{% endblock %}
